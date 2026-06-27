@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
+  <title>Hotel Booking System</title>
 </head>
 <body>
-    Hello Dunia
+  <h2>🏨 Hotel Booking System (Console-based)</h2>
+  <p>Open your browser console (F12 → Console) to interact with the system.</p>
+
+  <script>
+    // Hotel rooms data
+    let rooms = [
+      { roomNo: 101, type: "Single", price: 1500, booked: false },
+      { roomNo: 102, type: "Double", price: 2500, booked: false },
+      { roomNo: 103, type: "Suite", price: 4000, booked: false },
+      { roomNo: 104, type: "Single", price: 1500, booked: false },
+      { roomNo: 105, type: "Double", price: 2500, booked: false }
+    ];
+
+    let bookings = [];
+
+    function showRooms() {
+      console.log("\nAvailable Rooms:");
+      rooms.forEach(r => {
+        let status = r.booked ? "Booked" : "Available";
+        console.log(`Room ${r.roomNo} - ${r.type} - ₹${r.price} - ${status}`);
+      });
+    }
+
+    function bookRoom(roomNo, name, days) {
+      let room = rooms.find(r => r.roomNo === roomNo);
+      if (room && !room.booked) {
+        room.booked = true;
+        let total = room.price * days;
+        bookings.push({ roomNo, name, days, total });
+        console.log(`✅ Room ${roomNo} booked successfully for ${name}. Total cost: ₹${total}`);
+      } else {
+        console.log("❌ Room not available or invalid number.");
+      }
+    }
+
+    function cancelBooking(roomNo) {
+      let index = bookings.findIndex(b => b.roomNo === roomNo);
+      if (index !== -1) {
+        bookings.splice(index, 1);
+        let room = rooms.find(r => r.roomNo === roomNo);
+        if (room) room.booked = false;
+        console.log(`✅ Booking for Room ${roomNo} has been cancelled.`);
+      } else {
+        console.log("❌ No booking found for that room.");
+      }
+    }
+
+    function viewBookings() {
+      console.log("\nCurrent Bookings:");
+      if (bookings.length === 0) {
+        console.log("No bookings yet.");
+      } else {
+        bookings.forEach(b => {
+          console.log(`Room ${b.roomNo} - ${b.name} - ${b.days} days - ₹${b.total}`);
+        });
+      }
+    }
+
+    // Instructions
+    console.log("🏨 Welcome to Hotel Booking System!");
+    console.log("Use the following functions in console:");
+    console.log("showRooms() → Display all rooms");
+    console.log("bookRoom(roomNo, name, days) → Book a room");
+    console.log("cancelBooking(roomNo) → Cancel a booking");
+    console.log("viewBookings() → Show all bookings");
+  </script>
 </body>
 </html>
