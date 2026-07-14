@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            min-height: 300px;
+            background: #d9a7c7; 
+            background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            height: 600px;
+            width: 350px;
+            background: #ffffff;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+            gap: 25px;
+        }
+        .card img{
+            height: 35%;
+            width: 100%;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .textbox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 75%;
+            text-align: center;
+        }
+        .amountbox{
+            width: 80%;
+            height: 10%;
+            background-color: blueviolet;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+            padding-left: 20px;
+            gap: 50px;
+            font-size: 0.8rem;
+        }
+        .leftbox{
+            /* width: fit-content; */
+            display: flex;
+            height: 100%;
+            gap: 15px;
+            align-items: center;
+        }
+        .leftbox img{
+            border-radius: 60%;
+        }
+        #paymentbtn{
+            width: 80%;
+            height: 8%;
+            background-color: #d9a7c7;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+        .cancelbox a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+                <img src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Flarge%2Fford%2Fmustang%2Fford-mustang.jpg%3Fv%3D34&w=1920&q=80" alt="">
+                <div class="textbox">
+                    <h2>Order Details</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit.minus itaque tenetur non, optio ipsam, eius 
+                    labore unde vitae aspernatur quidem ex.</p>
+                </div>
+                <div class="amountbox">
+                    <div class="leftbox">
+                        <div class="imgbox">
+                            <img src="https://technologytonic.tech.blog/wp-content/uploads/2025/10/ford.jpg" alt="">
+                        </div>
+                        <div class="textamounttbox">
+                            <p>Annual Plan</p>
+                            <p>Rs.9999/month</p>
+                        </div>
+                    </div>
+                    <div class="rightbox">
+                        <a href="">Change</a>
+                    </div>    
+                </div>
+                <button id="paymentbtn">Proceed To Payment</button>
+                <div class="cancelbox"><a href="#">Cancel Order</a></div>
+                    
+        </div>   
+    </div>
+</body>
+</html>
